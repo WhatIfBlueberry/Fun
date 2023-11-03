@@ -5,7 +5,7 @@ let squareSize = 32 * resolution;
 let allTiles = [];
 let allTilesNEXT = [];
 function setup() {
-  createCanvas(windowWidth, windowHeight);  
+  createCanvas(windowWidth, windowHeight);
   background(255);
   stroke(0, 0, 0);
   // strokeWeight(3 * resolution);
@@ -24,7 +24,6 @@ function setup() {
     for (let i=0; i<allTiles.length; i++) {
       allTilesNEXT[i] = allTiles[i].slice(0);
     }
-    
   }
   storeTilePositionInArray();
 
