@@ -1,4 +1,5 @@
 let r = 0.75;
+let toggle;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
@@ -12,8 +13,14 @@ function setup() {
   sliderName.position(60, 10);
   sliderName.style('color', '#ffc200');
 
+  toggle = createCheckbox('Toggle', false);
+  toggle.position(20, 90);
+  let toggleName = createP('Purify Values');
+  toggleName.position(60, 75);
+  toggleName.style('color', '#ffc200');
+
   button = createButton('Restart');
-  button.position(20, 80);
+  button.position(20, 125);
   button.mousePressed(restart);
 }
 
@@ -24,10 +31,13 @@ function draw() {
 
   frameRate(slider.value()); // Set the frame rate to the value of the slider
 
-  // Skip the first 1000 values
-  for (let i = 0; i < 1000; i++) {
-    x = logistic(r, x);
+  if(toggle.checked()){
+    // Skip the first 1000 values
+    for (let i = 0; i < 1000; i++) {
+      x = logistic(r, x);
+    }
   }
+
 
   for (let i = 0; i < 1000; i++) {
     x = logistic(r, x);
