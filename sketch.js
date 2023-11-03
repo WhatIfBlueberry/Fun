@@ -13,7 +13,7 @@ function setup() {
   sliderName.position(60, 10);
   sliderName.style('color', '#ffc200');
 
-  toggle = createCheckbox('Toggle', false);
+  toggle = createCheckbox('', false);
   toggle.position(20, 90);
   let toggleName = createP('Purify Values');
   toggleName.position(60, 75);
